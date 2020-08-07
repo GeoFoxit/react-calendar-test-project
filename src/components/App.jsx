@@ -14,7 +14,7 @@ export default class App extends Component {
 
     return (
       <div>
-        {date && <p>Choosen date: {date.toLocalDateString()}</p> }
+        {date && <p>Выбранная дата: {date.toLocaleDateString()}</p> }
 
         <Calendar onChange={this.handleDateChange} />
       </div>
