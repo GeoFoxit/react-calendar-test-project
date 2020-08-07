@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react'
 
-function App() {
-  return (
-    <div>
-      Hello
-    </div>
-  );
+import Calendar from './Calendar'
+
+export default class App extends Component {
+  state = {
+    date: null
+  }
+  
+  handleDateChange = date => this.setState({date})
+
+  render() {
+    const {date} = this.state;
+
+    return (
+      <div>
+        {date && <p>Choosen date: {date.toLocalDateString()}</p> }
+
+        <Calendar onChange={this.handleDateChange} />
+      </div>
+    )
+  }
 }
-
-export default App;
